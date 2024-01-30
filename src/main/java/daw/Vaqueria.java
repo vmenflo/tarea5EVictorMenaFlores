@@ -15,22 +15,21 @@ import java.util.Set;
 public class Vaqueria {
     //Atributos
 
-    private Set<Vaca> vaqueria;
+    private Set<Vaca> vaqueria = new HashSet<>();
 
     //Constructor
-    public Vaqueria(Set<Vaca> vaqueria) {
-        this.vaqueria = vaqueria;
+    public Vaqueria() {
+      
     }
 
     //Getter and Setter
-    public Set<Vaca> getVaqueria() {
+   public Set<Vaca> getVaqueria() {
         return vaqueria;
     }
 
     public void setVaqueria(Set<Vaca> vaqueria) {
         this.vaqueria = vaqueria;
     }
-
     //to string
     @Override
     public String toString() {
@@ -68,4 +67,9 @@ public class Vaqueria {
     public int numeroVacas() {
     return vaqueria.size();
     }
+    //Metodo rellenar Vaqueria de Vacas
+    public void add(Vaca vaca){
+        this.vaqueria.add(vaca);
+    }
+    
 }
