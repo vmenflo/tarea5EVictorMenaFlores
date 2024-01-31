@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package daw;
+package ParteA;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -11,12 +11,13 @@ import java.util.Objects;
  *
  * @author victor
  */
-public class Vaca {
+public class Vaca implements Comparable<Vaca> {
+
     //Atributo
     private int id;
     private LocalDate fechaNacimiento;
     private String descripcion;
-    
+
     //Constructor
     public Vaca(int id, LocalDate fechaNacimiento, String descripcion) {
         this.id = id;
@@ -48,9 +49,8 @@ public class Vaca {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    //To String
 
+    //To String
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -61,9 +61,8 @@ public class Vaca {
         sb.append('}');
         return sb.toString();
     }
-    
-    //Equals y hashcode
 
+    //Equals y hashcode
     @Override
     public int hashCode() {
         int hash = 7;
@@ -93,6 +92,24 @@ public class Vaca {
         }
         return Objects.equals(this.fechaNacimiento, other.fechaNacimiento);
     }
-    
-    
+
+    //Compare to por fecha
+    @Override
+    public int compareTo(Vaca o) {
+        /*HE ESTADO PROBANDO A ORDENAR POR FECHA, Y EN CASO EMPATE POR ID
+        if (this.fechaNacimiento.isBefore(o.getFechaNacimiento())) {
+            return -1;//Si es menor devuelve negativo
+        } else if (this.fechaNacimiento.isAfter(o.getFechaNacimiento())) {
+            return 1;//Si es mayor 1
+        } else {//En caso de empate ordenará por id*/
+            if (this.id < o.getId()) {
+                return -1;//Si es menor -1
+            } else if (this.id > o.getId()) {
+                return 1; //Si es mayot 1
+            } else {
+                return 0;
+            }
+       /* }*/
+    }
+
 }

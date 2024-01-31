@@ -2,50 +2,51 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package daw;
+package ParteB;
 
+import ParteA.Vaca;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  *
- * @author victor
+ * @author Víctor
  */
-public class Vaqueria {
+public class VaqueriaOrdenada {
     //Atributos
-
-    private Set<Vaca> vaqueria = new HashSet<>();
-
+    
+    private SortedSet<Vaca> vaqueria = new TreeSet<>();
+    
     //Constructor
-    public Vaqueria() {
-      
-    }
 
+    public VaqueriaOrdenada() {
+    }
     //Getter and Setter
-   public Set<Vaca> getVaqueria() {
+
+    public SortedSet<Vaca> getVaqueria() {
         return vaqueria;
     }
 
-    public void setVaqueria(Set<Vaca> vaqueria) {
+    public void setVaqueria(SortedSet<Vaca> vaqueria) {
         this.vaqueria = vaqueria;
     }
-    //to string
+    //To String
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Vaqueria{");
+        sb.append("VaqueriaOrdenada{");
         sb.append("vaqueria=").append(vaqueria);
         sb.append('}');
         return sb.toString();
     }
+    //Equals and HashCode
 
-    //Equals
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 71 * hash + Objects.hashCode(this.vaqueria);
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.vaqueria);
         return hash;
     }
 
@@ -60,10 +61,11 @@ public class Vaqueria {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Vaqueria other = (Vaqueria) obj;
+        final VaqueriaOrdenada other = (VaqueriaOrdenada) obj;
         return Objects.equals(this.vaqueria, other.vaqueria);
     }
-
+    
+    //Métodos
     //Metodo para saber el numero de vacas
     public int numeroVacas() {
     return vaqueria.size();
