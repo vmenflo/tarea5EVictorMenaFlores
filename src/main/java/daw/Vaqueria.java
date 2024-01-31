@@ -4,6 +4,7 @@
  */
 package daw;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -67,9 +68,36 @@ public class Vaqueria {
     public int numeroVacas() {
     return vaqueria.size();
     }
-    //Metodo rellenar Vaqueria de Vacas
+    //Metodo añadir Vaqueria de Vacas
     public void add(Vaca vaca){
         this.vaqueria.add(vaca);
     }
     
+    //Método para saber si la vaqueria tiene vacas
+    public boolean estaLlena(){
+        return !this.vaqueria.isEmpty();
+        
+    }
+    
+    //Saber si un animal está en la vaqueria
+    public boolean buscarVaca(Vaca vaca){
+        return this.vaqueria.contains(vaca);
+    }
+    
+    //Sacar todos los animales en forma de Array
+    public ArrayList<Vaca> generarArrayVacas(){
+        ArrayList<Vaca> lista = new ArrayList<>(vaqueria);
+    
+        return lista;
+    }
+    
+    //Dar de baja una vaca
+    public void darBajaVaca(Vaca vaca){
+        this.vaqueria.remove(vaca);
+    }
+    
+    //Mostrar
+    public void mostrar(){
+          vaqueria.forEach(System.out::println);
+    }
 }

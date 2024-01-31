@@ -55,9 +55,9 @@ public class Vaca {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Vaca{");
-        sb.append("id=").append(id);
-        sb.append(", fechaNacimiento=").append(fechaNacimiento);
-        sb.append(", descripcion=").append(descripcion);
+        sb.append("nid=").append(id);
+        sb.append("fechaNacimiento=").append(fechaNacimiento);
+        sb.append("descripcion=").append(descripcion);
         sb.append('}');
         return sb.toString();
     }
