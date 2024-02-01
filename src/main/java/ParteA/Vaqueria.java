@@ -6,6 +6,7 @@ package ParteA;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 
@@ -20,17 +21,18 @@ public class Vaqueria {
 
     //Constructor
     public Vaqueria() {
-      
+
     }
 
     //Getter and Setter
-   public Set<Vaca> getVaqueria() {
+    public Set<Vaca> getVaqueria() {
         return vaqueria;
     }
 
     public void setVaqueria(Set<Vaca> vaqueria) {
         this.vaqueria = vaqueria;
     }
+
     //to string
     @Override
     public String toString() {
@@ -66,38 +68,47 @@ public class Vaqueria {
 
     //Metodo para saber el numero de vacas
     public int numeroVacas() {
-    return vaqueria.size();
+        return vaqueria.size();
     }
+
     //Metodo añadir Vaqueria de Vacas
-    public void add(Vaca vaca){
+    public void add(Vaca vaca) {
         this.vaqueria.add(vaca);
     }
-    
+
     //Método para saber si la vaqueria tiene vacas
-    public boolean estaLlena(){
+    public boolean estaLlena() {
         return !this.vaqueria.isEmpty();
-        
+
     }
-    
+
     //Saber si un animal está en la vaqueria
-    public boolean buscarVaca(Vaca vaca){
+    public boolean buscarVaca(Vaca vaca) {
         return this.vaqueria.contains(vaca);
     }
-    
+
     //Sacar todos los animales en forma de Array
-    public ArrayList<Vaca> generarArrayVacas(){
+    public ArrayList<Vaca> generarArrayVacas() {
         ArrayList<Vaca> lista = new ArrayList<>(vaqueria);
-    
+
         return lista;
     }
-    
+
     //Dar de baja una vaca
-    public void darBajaVaca(Vaca vaca){
+    public void darBajaVaca(Vaca vaca) {
         this.vaqueria.remove(vaca);
     }
-    
+
     //Mostrar
-    public void mostrar(){
-          vaqueria.forEach(System.out::println);
+    public void mostrar() {
+        this.vaqueria.forEach(System.out::println);
+    }
+
+    //Mostrar vaqueria con iterador
+    public void mostrarConIterador() {
+        Iterator<Vaca> iterador = vaqueria.iterator();
+        while (iterador.hasNext()) {
+            System.out.println(iterador);
+        }
     }
 }

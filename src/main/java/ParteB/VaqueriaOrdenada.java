@@ -16,7 +16,8 @@ import java.util.TreeSet;
  */
 public class VaqueriaOrdenada {
     //Atributos
-    
+    //Estamos usando el orden natural pero también podriamos indicarle cual queremos
+    //De la siguiente forma private SortedSet<Vaca> vauqeria2 = new TreeSet<>(comparator);
     private SortedSet<Vaca> vaqueria = new TreeSet<>();
     
     //Constructor

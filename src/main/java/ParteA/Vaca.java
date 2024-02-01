@@ -102,13 +102,7 @@ public class Vaca implements Comparable<Vaca> {
         } else if (this.fechaNacimiento.isAfter(o.getFechaNacimiento())) {
             return 1;//Si es mayor 1
         } else {//En caso de empate ordenará por id*/
-            if (this.id < o.getId()) {
-                return -1;//Si es menor -1
-            } else if (this.id > o.getId()) {
-                return 1; //Si es mayot 1
-            } else {
-                return 0;
-            }
+            return Integer.compare(this.id, o.getId());
        /* }*/
     }
 
